@@ -1,0 +1,27 @@
+{
+  "name": "learn-three-js",
+  "version": "1.0.0",
+  "description": "learn three js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "test": "vite --mode test",
+    "build:test": "vite build --mode test",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.2.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^3.0.0",
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "vite": "^4.0.0",
+    "less": "^4.1.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
