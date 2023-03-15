@@ -1,7 +1,7 @@
 import { Suspense, lazy } from "react"
 import { Route, Routes, RouterProvider, createHashRouter, createRoutesFromElements, useRouteError } from "react-router-dom";
 
-// const SearchPage = lazy(() => import('../pages/search'));
+const ShadowPage = lazy(() => import('../pages/Shadow'));
 // const FeedbackPage = lazy(() => import('../pages/feedback'));
 // const ResultPage = lazy(() => import('../pages/result'));
 // const SSOPage = lazy(() => import('../pages/sso'));
@@ -9,9 +9,13 @@ import { Route, Routes, RouterProvider, createHashRouter, createRoutesFromElemen
 
 export const routes = [
   {
-    path: "/search",
-    element: <SearchPage></SearchPage>,
+    path: "/shadow",
+    element: <ShadowPage></ShadowPage>,
   },
+  {
+    path: "/",
+    element: <ShadowPage></ShadowPage>,
+  }
 ]
 
 function ErrorBoundary() {

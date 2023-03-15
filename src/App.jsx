@@ -1,16 +1,9 @@
 
 import { useEffect } from 'react';
+import RouteContainer from './router/index.jsx';
 
 function App() {
-
-
-
-  return <>
-    {isMobile() ? <MobileEntry></MobileEntry> : <PCEntry></PCEntry>}
-  </>
-
-
-
+  return <RouteContainer></RouteContainer>
 }
 
 
