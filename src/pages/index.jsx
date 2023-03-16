@@ -1,8 +1,10 @@
 import { useLocation, useNavigate } from "react-router-dom";
 
 const list = [
-  { name: "shadow", path: "/shadow" },
-  { name: "animation", path: "/animation" },
+  { name: "shadow 阴影", path: "/shadow" },
+  { name: "animation 动效", path: "/animation" },
+  { name: "scene 基本", path: "/scene" },
+  { name: "geometry 几何体", path: "/geometry" }
 ]
 
 const IndexPage = () => {

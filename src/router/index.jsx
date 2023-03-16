@@ -4,7 +4,8 @@ import { Route, Routes, RouterProvider, createHashRouter, createRoutesFromElemen
 const ShadowPage = lazy(() => import('../pages/Shadow'));
 const IndexPage = lazy(() => import('../pages/index'));
 const AnimationPage = lazy(() => import('../pages/Animation'));
-
+const ScenePage = lazy(() => import('../pages/Scene'));
+const GeometryPage = lazy(() => import('../pages/Geometry'));
 
 export const routes = [
   {
@@ -13,6 +14,12 @@ export const routes = [
   }, {
     path: "/animation",
     element: <AnimationPage></AnimationPage>,
+  }, {
+    path: "/scene",
+    element: <ScenePage></ScenePage>,
+  }, {
+    path: "/geometry",
+    element: <GeometryPage></GeometryPage>,
   }, {
     path: "/",
     element: <IndexPage></IndexPage>,
