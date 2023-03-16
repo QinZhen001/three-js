@@ -4,10 +4,42 @@ import {
   PerspectiveCamera, Mesh, SpotLight, AxesHelper, MeshLambertMaterial,
   AmbientLight, Vector2
 } from "three"
+import Stats from "stats.js"
 
-const Shadow = () => {
+
+
+const Animation = () => {
 
   const webglRef = useRef(null)
+
+
+  useEffect(() => {
+    let showed = true
+    const stats = new Stats();
+    document.body.appendChild(stats.dom);
+    stats.begin();
+
+    const animateStats = () => {
+      if (showed) {
+        stats.update();
+        requestAnimationFrame(animateStats);
+      }
+    }
+
+    requestAnimationFrame(animateStats);
+
+    return () => {
+      showed = false
+      stats.end();
+      document.body.removeChild(stats.dom);
+    }
+
+  }, [])
+
+  useEffect(() => {
+    init()
+  }, [])
+
 
   const init = () => {
     const scene = new Scene()
@@ -59,13 +91,25 @@ const Shadow = () => {
     const ambientLight = new AmbientLight(0xAAAAAA)
     scene.add(ambientLight)
 
-    renderer.render(scene, camera)
+    // renderer.render(scene, camera)
+
+    let gap = 0
+    renderScene()
+
+    function renderScene() {
+      cube.rotation.x += 0.01
+      cube.rotation.y += 0.01
+      cube.rotation.z += 0.01
+
+      gap += 0.01
+      cube.position.x = 25 + (20 * Math.sin(gap))
+      cube.position.y = 6 + (20 * Math.abs(Math.cos(gap)))
+
+      requestAnimationFrame(renderScene)
+      renderer.render(scene, camera)
+    }
   }
 
-
-  useEffect(() => {
-    init()
-  }, [])
 
   return <div>
     <div ref={webglRef}></div>
@@ -74,4 +118,4 @@ const Shadow = () => {
 
 
 
-export default Shadow
+export default Animation

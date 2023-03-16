@@ -2,19 +2,20 @@ import { Suspense, lazy } from "react"
 import { Route, Routes, RouterProvider, createHashRouter, createRoutesFromElements, useRouteError } from "react-router-dom";
 
 const ShadowPage = lazy(() => import('../pages/Shadow'));
-// const FeedbackPage = lazy(() => import('../pages/feedback'));
-// const ResultPage = lazy(() => import('../pages/result'));
-// const SSOPage = lazy(() => import('../pages/sso'));
+const IndexPage = lazy(() => import('../pages/index'));
+const AnimationPage = lazy(() => import('../pages/Animation'));
 
 
 export const routes = [
   {
     path: "/shadow",
     element: <ShadowPage></ShadowPage>,
-  },
-  {
+  }, {
+    path: "/animation",
+    element: <AnimationPage></AnimationPage>,
+  }, {
     path: "/",
-    element: <ShadowPage></ShadowPage>,
+    element: <IndexPage></IndexPage>,
   }
 ]
 
